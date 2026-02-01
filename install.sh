@@ -112,10 +112,8 @@ main() {
 
   platform="$(detect_platform)"
 
-  # Read tag + version safely (global IFS has no space)
-  mapfile -t tv < <(resolve_tag_and_version)
-  tag="${tv[0]}"
-  version="${tv[1]}"
+  # Read tag + version safely (bash 3.2 compatible; no mapfile)
+  { IFS= read -r tag; IFS= read -r version; } < <(resolve_tag_and_version)
 
   [[ -n "${tag:-}" ]] || fail "Internal error: tag empty after resolve_tag_and_version"
   [[ -n "${version:-}" ]] || fail "Internal error: version empty after resolve_tag_and_version"
