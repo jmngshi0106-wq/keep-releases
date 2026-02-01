@@ -61,14 +61,18 @@ resolve_tag_and_version() {
       -H "Accept: application/vnd.github+json" \
       -H "User-Agent: keep-installer" \
       "$API_LATEST")" || fail "Could not fetch latest release metadata."
-    tag="$(awk -F'"' '/"tag_name":/ {print $4; exit}' <<<"$json")"
+
+    # Robust extraction: find the "tag_name" key anywhere in the JSON (even if it's one line)
+    tag="$(awk -F'"' '{for(i=1;i<=NF;i++){if($i=="tag_name"){print $(i+2); exit}}}' <<<"$json")"
   fi
 
   [[ -n "${tag:-}" ]] || fail "Could not resolve release tag."
   [[ "$tag" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]] || fail "Invalid tag format: $tag (expected vX.Y.Z)"
 
   version="${tag#v}"
-  echo "$tag" "$version"
+
+  # Return as 2 newline-delimited lines so our global IFS (no space) doesn't break parsing.
+  printf '%s\n%s\n' "$tag" "$version"
 }
 
 require_permissions_or_refuse() {
@@ -104,9 +108,17 @@ main() {
   local workdir tarball sha_file expected_sha actual_sha
   local extract_dir keep_bin templates_dir
   local install_root bin_dir install_templates_dir installed_at_utc
+  local tv
 
   platform="$(detect_platform)"
-  read -r tag version < <(resolve_tag_and_version)
+
+  # Read tag + version safely (global IFS has no space)
+  mapfile -t tv < <(resolve_tag_and_version)
+  tag="${tv[0]}"
+  version="${tv[1]}"
+
+  [[ -n "${tag:-}" ]] || fail "Internal error: tag empty after resolve_tag_and_version"
+  [[ -n "${version:-}" ]] || fail "Internal error: version empty after resolve_tag_and_version"
 
   asset="keep-${version}-${platform}.tar.gz"
   sha_asset="${asset}.sha256"
