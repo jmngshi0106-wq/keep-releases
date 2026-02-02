@@ -13,6 +13,8 @@ API_LATEST="https://api.github.com/repos/${MIRROR_REPO}/releases/latest"
 INSTALL_BASE="/usr/local/lib/keep"
 SYMLINK="/usr/local/bin/keep"
 
+CANONICAL_INSTALL_URL="https://github.com/jmngshi0106-wq/keep-releases/releases/latest/download/install.sh"
+
 sha256_file() {
   local f="$1"
   if command -v shasum >/dev/null 2>&1; then
@@ -83,7 +85,7 @@ require_permissions_or_refuse() {
   if [[ "${EUID:-$(id -u)}" -ne 0 ]] && [[ "$need_root" == "1" ]]; then
     fail "Insufficient permissions to install into /usr/local.
 Re-run with sudo, e.g.:
-  curl -fsSL -L https://github.com/jmngshi0106-wq/keep-releases/releases/latest/download/install.sh | sudo bash"
+  curl -fsSL -L ${CANONICAL_INSTALL_URL} | sudo bash"
   fi
 
   if [[ -e "$SYMLINK" ]] && [[ ! -L "$SYMLINK" ]]; then
@@ -103,12 +105,13 @@ main() {
   need_cmd mkdir
   need_cmd ln
   need_cmd curl
+  need_cmd grep
+  need_cmd rm
 
   local platform tag version asset sha_asset base_url
   local workdir tarball sha_file expected_sha actual_sha
   local extract_dir keep_bin templates_dir
   local install_root bin_dir install_templates_dir installed_at_utc
-  local tv
 
   platform="$(detect_platform)"
 
@@ -118,11 +121,46 @@ main() {
   [[ -n "${tag:-}" ]] || fail "Internal error: tag empty after resolve_tag_and_version"
   [[ -n "${version:-}" ]] || fail "Internal error: version empty after resolve_tag_and_version"
 
+  install_root="${INSTALL_BASE}/${version}"
+  bin_dir="${install_root}/bin"
+  install_templates_dir="${install_root}/templates"
+
+  # IMPORTANT: bail out early if already installed (avoid download/extract).
+  if [[ -e "$install_root" ]]; then
+    require_permissions_or_refuse
+
+    if [[ "${KEEP_FORCE:-0}" == "1" ]]; then
+      echo "==> KEEP_FORCE=1 set: removing existing install root..."
+      rm -rf "$install_root"
+    else
+      local existing_keep existing_receipt
+      existing_keep="${install_root}/bin/keep"
+      existing_receipt="${install_root}/receipt.json"
+
+      if [[ -x "$existing_keep" ]] && [[ -f "$existing_receipt" ]]; then
+        if grep -q "\"keep_version\": \"${version}\"" "$existing_receipt" \
+          && grep -q "\"tag\": \"${tag}\"" "$existing_receipt" \
+          && grep -q "\"mirror_repo\": \"${MIRROR_REPO}\"" "$existing_receipt"; then
+          echo "==> Already installed: ${install_root}"
+          ln -sfn "${install_root}/bin/keep" "$SYMLINK"
+          echo "==> Symlink ensured: ${SYMLINK} -> ${install_root}/bin/keep"
+          exit 0
+        fi
+      fi
+
+      fail "Install root already exists: $install_root
+Refusing to overwrite (receipt/binary mismatch or missing).
+If you intend to replace it, rerun with:
+  curl -fsSL -L ${CANONICAL_INSTALL_URL} | sudo env KEEP_FORCE=1 bash"
+    fi
+  fi
+
   asset="keep-${version}-${platform}.tar.gz"
   sha_asset="${asset}.sha256"
   base_url="https://github.com/${MIRROR_REPO}/releases/download/${tag}"
 
   workdir="$(mktemp -d "${TMPDIR:-/tmp}/keep-install.XXXXXX")"
+  trap 'rm -rf "${workdir}"' EXIT
   extract_dir="${workdir}/extract"
   mkdir -p "$extract_dir"
 
@@ -159,13 +197,17 @@ actual:   $actual_sha"
 
   require_permissions_or_refuse
 
-  install_root="${INSTALL_BASE}/${version}"
-  bin_dir="${install_root}/bin"
-  install_templates_dir="${install_root}/templates"
-
+  # Re-check: if something created the install_root since our early check, refuse unless forced.
   if [[ -e "$install_root" ]]; then
-    fail "Install root already exists: $install_root
-Refusing to overwrite. Remove it manually if you intend to replace."
+    if [[ "${KEEP_FORCE:-0}" == "1" ]]; then
+      echo "==> KEEP_FORCE=1 set: removing existing install root..."
+      rm -rf "$install_root"
+    else
+      fail "Install root already exists: $install_root
+Refusing to overwrite.
+If you intend to replace it, rerun with:
+  curl -fsSL -L ${CANONICAL_INSTALL_URL} | sudo env KEEP_FORCE=1 bash"
+    fi
   fi
 
   echo "==> Installing..."
