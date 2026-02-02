@@ -83,7 +83,7 @@ require_permissions_or_refuse() {
   if [[ "${EUID:-$(id -u)}" -ne 0 ]] && [[ "$need_root" == "1" ]]; then
     fail "Insufficient permissions to install into /usr/local.
 Re-run with sudo, e.g.:
-  curl -fsSL https://raw.githubusercontent.com/jmngshi0106-wq/keep-releases/main/install.sh | sudo bash"
+  curl -fsSL -L https://github.com/jmngshi0106-wq/keep-releases/releases/latest/download/install.sh | sudo bash"
   fi
 
   if [[ -e "$SYMLINK" ]] && [[ ! -L "$SYMLINK" ]]; then
