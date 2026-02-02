@@ -13,6 +13,7 @@ API_LATEST="https://api.github.com/repos/${MIRROR_REPO}/releases/latest"
 INSTALL_BASE="/usr/local/lib/keep"
 SYMLINK="/usr/local/bin/keep"
 
+# Canonical install URL (release asset, not raw/main)
 CANONICAL_INSTALL_URL="https://github.com/jmngshi0106-wq/keep-releases/releases/latest/download/install.sh"
 
 sha256_file() {
