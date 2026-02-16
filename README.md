@@ -57,7 +57,7 @@ bash -lc 'set -euo pipefail; tmp="$(mktemp -d)"; cd "$tmp"; mkdir keep-project &
 ```
 
 On success, you should see:
- ✓ Test run complete.
+`✓ Test run complete.`
 
 ---
 
@@ -66,5 +66,3 @@ On success, you should see:
 - Quickstart: https://github.com/jmngshi0106-wq/keep-releases/blob/main/docs/quickstart.md
 - What Keep guarantees: https://github.com/jmngshi0106-wq/keep-releases/blob/main/docs/guarantees.md
 - How Keep fails: https://github.com/jmngshi0106-wq/keep-releases/blob/main/docs/how-keep-fails.md
-
-```
