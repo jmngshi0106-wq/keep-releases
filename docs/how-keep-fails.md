@@ -29,7 +29,7 @@ Everything after can be noise (especially inside transactions).
 ```bash
 docker ps
 supabase status
-````
+```
 
 **Fix**
 
