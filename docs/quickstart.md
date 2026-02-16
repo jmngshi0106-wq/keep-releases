@@ -21,7 +21,7 @@ Keep’s official installer URL is the **GitHub Release asset** (not `raw/main`)
 ```bash
 curl -fsSL -L https://github.com/jmngshi0106-wq/keep-releases/releases/latest/download/install.sh | sudo bash
 keep version
-````
+```
 
 ---
 
@@ -60,8 +60,8 @@ On success, you should see:
 
 ## More docs
 
-* Guarantees: `docs/guarantees.md`
-* How Keep fails: `docs/how-keep-fails.md`
+- Guarantees: `docs/guarantees.md`
+- How Keep fails: `docs/how-keep-fails.md`
 
 
 
