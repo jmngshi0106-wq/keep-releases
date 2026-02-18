@@ -2,7 +2,7 @@
 
 Keep is a **secure-by-default, RLS-first multi-tenant layer** for Supabase/Postgres; this repo is a **public release mirror** (the source repository is private).
 
-Start here: run the Install → Verify → Demo steps below (they match docs/quickstart.md), then confirm PASS with the checklist.
+Start here: run the Install → Verify → Demo steps below (they match `docs/quickstart.md`), then confirm PASS with the checklist.
 
 **Trust links (public):**
 
