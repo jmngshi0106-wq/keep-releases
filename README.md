@@ -1,12 +1,13 @@
-# keep-releases
+# Keep
 
-Public release mirror for Keep CLI binaries + checksums.
-Source repository is private.
+Keep is a **secure-by-default, RLS-first multi-tenant layer** for Supabase/Postgres; this repo is a **public release mirror** (the source repository is private).
 
-## Keep v0.1.14 — Launch Spine (Install → Verify → Demo → PASS)
+**Start here:** run the **Install → Verify → Demo → PASS** loop below (the step blocks are copied verbatim from `docs/quickstart.md`).
 
-Keep is a **secure-by-default, RLS-first multi-tenant layer** for Supabase/Postgres.
-This release gives you a self-serve proof loop where **pgTAP proves** tenant isolation (Alice/Bob) and **Eve sees nothing**.
+**Trust links (public):**
+
+* What Keep Guarantees: [docs/guarantees.md](docs/guarantees.md)
+* How Keep Fails: [docs/how-keep-fails.md](docs/how-keep-fails.md)
 
 ---
 
@@ -61,8 +62,26 @@ On success, you should see:
 
 ---
 
-## Docs (public)
+## More docs
 
-- Quickstart: https://github.com/jmngshi0106-wq/keep-releases/blob/main/docs/quickstart.md
-- What Keep guarantees: https://github.com/jmngshi0106-wq/keep-releases/blob/main/docs/guarantees.md
-- How Keep fails: https://github.com/jmngshi0106-wq/keep-releases/blob/main/docs/how-keep-fails.md
+* Guarantees: `docs/guarantees.md`
+* How Keep fails: `docs/how-keep-fails.md`
+
+## 2) Verbatim-consistency confirmation (README vs public quickstart)
+
+* The **Install** block matches `docs/quickstart.md` lines 17–24 (and the same block appears in the v0.1.14 release notes lines 15–22).
+* The **Verify** blocks match `docs/quickstart.md` lines 28–44 (and the same blocks appear in the v0.1.14 release notes lines 26–42).
+* The **Demo + PASS expectation** match `docs/quickstart.md` lines 48–57 (and the same block appears in the v0.1.14 release notes lines 46–56).
+
+## 3) PASS criteria checklist (stranger-friendly, from README alone)
+
+* [ ] **Install**: run the install block; `keep version` exits successfully.
+* [ ] **Verify** (your platform): run the sha256 block; the check command exits **0**.
+* [ ] **Demo**: run the one-command demo block.
+* [ ] **PASS**: output includes: `✓ Test run complete.`
+
+## 4) Drift detected + smallest fix
+
+* Drift in current README vs `docs/quickstart.md` was present in **Prerequisites bullet style** and the **docs section format/links**.
+* Smallest fix (README-only, applied above): copy the Prerequisites + Install/Verify/Demo/PASS + More docs blocks **verbatim** from `docs/quickstart.md`, and keep any extra “repo-homepage selling” text **above** the canonical blocks.
+
