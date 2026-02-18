@@ -66,22 +66,3 @@ On success, you should see:
 
 * Guarantees: `docs/guarantees.md`
 * How Keep fails: `docs/how-keep-fails.md`
-
-## 2) Verbatim-consistency confirmation (README vs public quickstart)
-
-* The **Install** block matches `docs/quickstart.md` lines 17–24 (and the same block appears in the v0.1.14 release notes lines 15–22).
-* The **Verify** blocks match `docs/quickstart.md` lines 28–44 (and the same blocks appear in the v0.1.14 release notes lines 26–42).
-* The **Demo + PASS expectation** match `docs/quickstart.md` lines 48–57 (and the same block appears in the v0.1.14 release notes lines 46–56).
-
-## 3) PASS criteria checklist (stranger-friendly, from README alone)
-
-* [ ] **Install**: run the install block; `keep version` exits successfully.
-* [ ] **Verify** (your platform): run the sha256 block; the check command exits **0**.
-* [ ] **Demo**: run the one-command demo block.
-* [ ] **PASS**: output includes: `✓ Test run complete.`
-
-## 4) Drift detected + smallest fix
-
-* Drift in current README vs `docs/quickstart.md` was present in **Prerequisites bullet style** and the **docs section format/links**.
-* Smallest fix (README-only, applied above): copy the Prerequisites + Install/Verify/Demo/PASS + More docs blocks **verbatim** from `docs/quickstart.md`, and keep any extra “repo-homepage selling” text **above** the canonical blocks.
-
