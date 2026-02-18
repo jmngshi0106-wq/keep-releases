@@ -2,7 +2,7 @@
 
 Keep is a **secure-by-default, RLS-first multi-tenant layer** for Supabase/Postgres; this repo is a **public release mirror** (the source repository is private).
 
-**Start here:** run the **Install → Verify → Demo → PASS** loop below (the step blocks are copied verbatim from `docs/quickstart.md`).
+**Start here:** run the **Install → Verify → Demo → PASS** loop below (the **Install/Verify/Demo/PASS blocks** are copied verbatim from `docs/quickstart.md`).
 
 **Trust links (public):**
 
@@ -59,6 +59,15 @@ bash -lc 'set -euo pipefail; tmp="$(mktemp -d)"; cd "$tmp"; mkdir keep-project &
 
 On success, you should see:
 `✓ Test run complete.`
+
+---
+
+## PASS criteria checklist (stranger-friendly)
+
+* [ ] **Install**: run the install block; `keep version` exits successfully.
+* [ ] **Verify** (your platform): run the sha256 block; the check command exits **0**.
+* [ ] **Demo**: run the one-command demo block.
+* [ ] **PASS**: output includes: `✓ Test run complete.`
 
 ---
 
