@@ -1,0 +1,40 @@
+name: "Purchase: Keep Support ($99/mo)"
+description: "Start a paid support subscription for Keep."
+title: "[Purchase] Keep Support ($99/mo)"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Do not post secrets** (API keys, DB passwords, private URLs) — this repo is public.
+
+        This issue is the purchase intake. We will reply here with payment instructions.
+
+  - type: input
+    id: purchaser_name
+    attributes:
+      label: Name / Company (optional)
+      placeholder: "Jane Doe / Acme Inc."
+
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform
+      options:
+        - macOS (darwin-arm64)
+        - Linux (x86_64)
+    validations:
+      required: true
+
+  - type: textarea
+    id: use_case
+    attributes:
+      label: Use case (1–2 sentences)
+      placeholder: "What are you building and why do you want Keep support?"
+    validations:
+      required: true
+
+  - type: textarea
+    id: blocking_issue
+    attributes:
+      label: Blocking issue (optional)
+      placeholder: "If you’re currently stuck, paste the exact command + verbatim output (no secrets)."
