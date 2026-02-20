@@ -3,7 +3,6 @@ name: Release Gate (Launch Spine)
 on:
   release:
     types: [created, edited, published]
-  workflow_dispatch: {}
 
 permissions:
   contents: read
