@@ -45,4 +45,4 @@ Cancel anytime (your current month remains active; no retroactive refunds).
   - the exact output (verbatim)
 - **Never** paste secrets in a public issue.
 
-That’s it. This page exists so a stranger can understand **how to pay + what they receive** quickly.
+That’s it. This page exists so a potential customer can understand **how to pay + what they receive** quickly.
