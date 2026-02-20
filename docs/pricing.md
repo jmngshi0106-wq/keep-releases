@@ -1,3 +1,12 @@
+# Keep Pricing & Purchase (Paid Support)
+
+**TL;DR (60 seconds):**
+- Keep’s installer + release tarballs are **public**.
+- **You pay for support** (response time + guidance), not for download access.
+- To buy: open a **Purchase Request** issue → we reply with payment instructions → after payment, you’re covered.
+
+---
+
 ## What you’re buying
 
 ### Paid Support (the only paid thing in this MVP)
