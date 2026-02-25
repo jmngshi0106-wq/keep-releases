@@ -1,67 +1,108 @@
 # Keep — Commercial Contract (License + 12-Month Update Window)
 
-## What you are buying
+This document defines the commercial terms for Keep in plain English.
+**This is a distribution/entitlement boundary, not a runtime control system.**
+Keep does not “turn off.” Your installed version keeps working indefinitely.
 
-You are buying a **commercial license** for Keep that includes:
+---
+
+## 1) Definitions
+
+**Community Channel**
+Public releases published in the public mirror (“community ceiling”). We may publish occasional promos, but promos are not guaranteed.
+
+**Licensed Channel**
+Paid releases delivered via one or more private GitHub repositories (“Release Vaults”).
+
+**Update Window (12 months)**
+The 12-month period during which you are entitled to receive licensed releases.
+
+**Entitled Release**
+Any licensed release published during your active update window.
+
+---
+
+## 2) What is free (Community Channel)
+
+You may download and use any Keep release we publish in the Community Channel for any purpose, including commercial use.
+
+Community releases remain available publicly unless we explicitly state otherwise.
+
+---
+
+## 3) What requires a license (Licensed Channel)
+
+A license grants:
 
 1. the legal right to use Keep under a commercial license, and
-2. **12 months of update entitlement** (access to paid release bundles shipped during your window).
+2. **update entitlement**: access to licensed release bundles during your update window.
 
-Keep is infrastructure. **Your installed version keeps working indefinitely.** We do not “turn it off” if you don’t renew.
+No license means:
 
-## Free vs Licensed boundary
+* you may still use Community Channel releases, and
+* you may keep using any version you already installed, indefinitely,
+* but you are **not entitled to download new licensed releases**.
 
-**Community Channel (free):**
+---
 
-* Public releases we choose to publish in the public release mirror (“community ceiling”).
-* You may use community releases for any purpose (including commercial), forever.
+## 4) Update window mechanics
 
-**Licensed Updates (paid):**
+### During your active window
 
-* Releases published in the paid channel that are **not** included in the community ceiling.
-* Access to these paid releases requires an active license entitlement.
+You are entitled to **all licensed releases** published while your window is active (major/minor/patch/security).
 
-## Update window (12 months)
+### After your window expires
 
-Your update window starts on your purchase/activation date and lasts **12 months**.
-
-During the window, you are entitled to **all Keep releases** published in the paid channel (major/minor/patch/security) while your window is active.
-
-After the window ends:
-
-* You keep using your last entitled version **forever**.
-* You keep the ability to **re-download** all releases you were entitled to.
+* Your last entitled version keeps working indefinitely.
+* You retain the ability to **re-download all Entitled Releases** you already paid for.
 * You do **not** receive access to releases published after your window ends unless you renew.
 
-## License scope (who is covered)
+### Renewal (why renew)
+
+Renewal restores update entitlement for a new 12-month window.
+On renewal, you regain access to the **current** licensed release line (catch-up to latest) plus all licensed releases published during your renewed window.
+
+---
+
+## 5) License scope (who is covered)
 
 Licenses are issued to either:
 
-* a **company/org** (covers the legal entity: unlimited developers, unlimited repos), or
-* an **individual** (covers that person’s own projects).
+**A) Organization license (recommended)**
+Covers one legal entity (company/org): unlimited developers and unlimited repos owned by that entity.
 
-If you are using Keep primarily **on behalf of an organization** (e.g., employer/client production work), that organization needs its own org license.
+**B) Individual license**
+Covers one natural person for their own projects.
 
-One transfer is allowed if you later form a company you control (no window reset).
+If you are using Keep primarily **on behalf of an organization** (employer/client production work), that organization requires its own organization license.
 
-## Distribution & access
+**Transfer:** one transfer is allowed if an individual later forms a company they control (no window reset).
 
-Paid releases are delivered via a **private GitHub Releases channel**.
-Access is granted to the licensee’s GitHub account(s). Access persists for entitled releases even after expiry, but does not extend to new releases after expiry.
+---
 
-## Support
+## 6) Distribution & access (no DRM)
 
-Support is **best-effort** (no SLA). License purchase includes help with:
+Licensed releases are delivered through private GitHub “Release Vault” repositories.
 
-* access to paid releases, and
-* install/verification issues tied to official release artifacts.
+Access is granted to the licensee’s GitHub account(s). We manage access so that:
 
-Deep consulting, custom work, or urgent response can be offered separately later.
+* you retain access to vaults that contain your Entitled Releases (so you can re-download what you paid for), and
+* you do not receive access to vaults that contain releases outside your entitlement window unless you renew.
 
-## No telemetry / no tracking
+Keep does not require telemetry, phone-home, license servers, or runtime checks to operate.
 
-Keep does not require telemetry or phone-home to run. Licensing is enforced at the **distribution boundary**, not at runtime.
+---
 
-## Warranty & liability (plain-English)
+## 7) Support
 
-Keep is provided **as-is**. You are responsible for testing in your environment. We do not accept liability for data loss or operational incidents caused by misuse or misconfiguration.
+Support is best-effort and may change over time.
+At minimum, we will help resolve access issues to entitled releases and address install/verification problems tied to official artifacts.
+
+No SLA is implied unless purchased separately in writing.
+
+---
+
+## 8) Warranty & liability (plain English)
+
+Keep is provided **as-is**. You are responsible for testing in your environment.
+We do not accept liability for data loss, downtime, or operational incidents caused by misuse, misconfiguration, or integrating Keep into your systems.
