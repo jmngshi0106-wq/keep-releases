@@ -5,6 +5,10 @@ Keep is a **secure-by-default, RLS-first multi-tenant layer** for Supabase/Postg
 Start here: run the Install → Verify → Demo steps below (they match `docs/quickstart.md`), then confirm PASS with the checklist.
 
 **Pricing / Purchase (License + 12-month updates):** [docs/pricing.md](docs/pricing.md)
+<<<<<<< HEAD
+=======
+
+>>>>>>> 90c16c8 (milestone3: pivot to license + 12-month update window)
 **Commercial terms (authoritative):** [docs/commercial-contract.md](docs/commercial-contract.md)
 
 **Trust links (public):**
