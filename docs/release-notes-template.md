@@ -7,10 +7,11 @@ If they differ, the Release Gate CI will fail.
 
 ---
 
-## Pricing / Purchase (Paid Support)
+## Pricing / Purchase (License + 12-month updates)
 
 - Pricing + how to buy: https://github.com/jmngshi0106-wq/keep-releases/blob/main/docs/pricing.md
-- Purchase intake (opens an issue): https://github.com/jmngshi0106-wq/keep-releases/issues/new?title=%5BPurchase%5D%20Keep%20Support%20(%2499%2Fmo)
+- Commercial terms (authoritative): https://github.com/jmngshi0106-wq/keep-releases/blob/main/docs/commercial-contract.md
+- Purchase intake (opens an issue): https://github.com/jmngshi0106-wq/keep-releases/issues/new?template=purchase.yml
 
 ---
 
