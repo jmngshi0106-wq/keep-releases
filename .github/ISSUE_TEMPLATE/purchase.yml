@@ -1,6 +1,6 @@
-name: "Purchase: Keep Support ($99/mo)"
-description: "Start a paid support subscription for Keep."
-title: "[Purchase] Keep Support ($99/mo)"
+name: "Purchase: Keep License (12-month updates)"
+description: "Purchase a Keep license + 12-month update window (licensed releases via private Release Vault repos)."
+title: "[Purchase] Keep License (12-month updates)"
 body:
   - type: markdown
     attributes:
@@ -9,16 +9,42 @@ body:
 
         This issue is the purchase intake. We will reply here with payment instructions.
 
-  - type: input
-    id: purchaser_name
-    attributes:
-      label: Name / Company (optional)
-      placeholder: "Jane Doe / Acme Inc."
+        Commercial terms (authoritative): see `docs/commercial-contract.md`.
 
   - type: dropdown
-    id: platform
+    id: license_type
     attributes:
-      label: Platform
+      label: License type
+      options:
+        - Organization (covers one company/org: unlimited devs, unlimited repos)
+        - Individual (covers one person for their own projects)
+    validations:
+      required: true
+
+  - type: input
+    id: licensee_name
+    attributes:
+      label: Licensee name
+      description: "Org legal name (if Organization) or your name (if Individual)."
+      placeholder: "Acme Inc. / Jane Doe"
+    validations:
+      required: true
+
+  - type: input
+    id: github_access
+    attributes:
+      label: GitHub access to grant (for Release Vaults)
+      description: "GitHub username (and/or GitHub org) that should receive access to private Release Vault repos."
+      placeholder: "github.com/<username> or github.com/<org>"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: platforms
+    attributes:
+      label: Platform(s)
+      description: "Select the platform(s) you plan to install on."
+      multiple: true
       options:
         - macOS (darwin-arm64)
         - Linux (x86_64)
@@ -28,13 +54,15 @@ body:
   - type: textarea
     id: use_case
     attributes:
-      label: Use case (1–2 sentences)
-      placeholder: "What are you building and why do you want Keep support?"
+      label: Use case (optional, 1–2 sentences)
+      placeholder: "What are you building and where will Keep be used?"
     validations:
-      required: true
+      required: false
 
   - type: textarea
-    id: blocking_issue
+    id: notes
     attributes:
-      label: Blocking issue (optional)
-      placeholder: "If you’re currently stuck, paste the exact command + verbatim output (no secrets)."
+      label: Notes (optional)
+      placeholder: "Anything else we should know? (No secrets.)"
+    validations:
+      required: false
