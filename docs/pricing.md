@@ -1,57 +1,70 @@
-# Keep Pricing & Purchase (Paid Support)
+# Keep Pricing & Purchase (License + 12-Month Update Window)
 
 **TL;DR (60 seconds):**
-- Keep’s installer + release tarballs are **public**.
-- **You pay for support** (response time + guidance), not for download access.
-- To buy: open a **Purchase Request** issue → we reply with payment instructions → after payment, you’re covered.
+
+* The public `keep-releases` repo is the **Community Channel** (a **community ceiling**). Releases here are public.
+* A Keep **License** grants **12 months of update entitlement** to **licensed releases** delivered via private GitHub “Release Vault” repos.
+* **No runtime enforcement.** If you already installed a version, it keeps working indefinitely.
+* After your window ends, you keep the ability to **re-download what you already paid for**, but you won’t get new licensed releases unless you renew.
+
+**Commercial boundary (authoritative):** see `docs/commercial-contract.md`.
 
 ---
 
 ## What you’re buying
 
-### Paid Support (the only paid thing in this MVP)
-You’re purchasing **support time and response priority** for Keep.
+### Keep License + 12-month update window
 
-**You get**
-- **Support via GitHub Issues** in this repo (public).
-- A response target (see below).
-- Help with: install/verify/demo failures, Supabase local issues, RLS/policy questions related to Keep’s shipped behavior, and “what does this error mean / how do I fix it?”
+You are purchasing:
 
-**You don’t get**
-- Access to the private source repo (this repo is a public release mirror).
-- Custom feature development on demand.
-- Security incident response or audits.
-- Private support channels (this MVP uses GitHub Issues only).
+1. the legal right to use Keep under a commercial license, and
+2. **update entitlement** for 12 months (access to licensed release bundles published during your window).
+
+This is a **distribution boundary**, not a kill switch. Keep does not phone home.
 
 ---
 
 ## Pricing
 
-### Keep Support — **$99 / month**
-- Response target: **within 2 business days**
-- Scope: Keep installation + operation + proof loop help (Install / Verify / Demo / PASS), plus reasonable troubleshooting guidance.
+Pricing is currently handled manually while the commercial model stabilizes.
 
-Cancel anytime (your current month remains active; no retroactive refunds).
+**To purchase:** submit a Purchase Request (below). We’ll reply with payment instructions.
 
 ---
 
 ## How to purchase (2 minutes)
 
-1) Open a **Purchase Request** issue (copy/paste link):
-- https://github.com/jmngshi0106-wq/keep-releases/issues/new?title=%5BPurchase%5D%20Keep%20Support%20(%2499%2Fmo)&body=Please%20include%3A%0A-%20Your%20name%20%2F%20company%20(optional)%0A-%20Your%20use%20case%20(1-2%20sentences)%0A-%20Your%20platform%20(macOS%20darwin-arm64%20or%20Linux%20x86_64)%0A-%20Any%20urgent%20blocking%20issue%20(optional)%0A%0ANote%3A%20Do%20NOT%20post%20secrets%20(API%20keys%2C%20DB%20passwords)%20in%20a%20public%20issue.
+1. Open a **Purchase Request** using the repo’s Purchase issue template.
 
-2) We reply on the issue with **payment instructions**.
-3) After payment, your issue becomes your **support thread**, and you can file support issues going forward.
+2. Include:
+
+   * License type: **Organization** or **Individual**
+   * Name of org (if org license) or your name (if individual license)
+   * GitHub username (and/or GitHub org) to grant Release Vault access
+   * Your platform(s): macOS `darwin-arm64` and/or Linux `x86_64`
+   * Any urgent blocker (optional)
+
+3. We reply with **payment instructions**.
+
+4. After payment, we grant access to the appropriate private **Release Vault** repo(s) for your update window.
 
 ---
 
-## Support workflow (public repo)
+## What you receive after purchase
 
-- File issues with a clear title prefix: `[Support] ...`
-- Include:
-  - your OS (macOS darwin-arm64 / Linux x86_64)
-  - the exact command you ran
-  - the exact output (verbatim)
-- **Never** paste secrets in a public issue.
+* Access to private GitHub **Release Vault** repo(s) that contain the licensed releases you are entitled to.
+* During your active window: access to new licensed releases as they ship.
+* After expiry: continued access to **already-entitled** releases (so you can re-download what you paid for), but no access to releases published after expiry unless you renew.
 
-That’s it. This page exists so a potential customer can understand **how to pay + what they receive** quickly.
+---
+
+## Support (what it is and isn’t)
+
+Support is **best-effort** and may change over time.
+
+At minimum, we will help with:
+
+* access issues to entitled releases, and
+* install/verification problems tied to official artifacts.
+
+No SLA is implied unless purchased separately in writing.
