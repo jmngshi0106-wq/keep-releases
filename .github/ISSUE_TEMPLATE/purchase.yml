@@ -17,9 +17,7 @@ body:
     attributes:
       label: License type
       options:
-        - Organization (covers one company/org: unlimited devs, unlimited repos)
-        - Individual (covers one person for their own projects)
-    validations:
+        - "Organization (covers one company/org — unlimited devs, unlimited repos)"        - "Individual (covers one person for their own projects)"    validations:
       required: true
 
   - type: input
