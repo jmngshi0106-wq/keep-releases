@@ -10,6 +10,7 @@ body:
         This issue is the purchase intake. We will reply here with payment instructions.
 
         Commercial terms (authoritative): see `docs/commercial-contract.md`.
+        Pricing: see `docs/pricing.md`.
 
   - type: dropdown
     id: license_type
@@ -31,13 +32,31 @@ body:
       required: true
 
   - type: input
+    id: billing_email
+    attributes:
+      label: Billing email
+      description: "We send the invoice/receipt here."
+      placeholder: "billing@example.com"
+    validations:
+      required: true
+
+  - type: input
     id: github_access
     attributes:
       label: GitHub access to grant (for Release Vaults)
-      description: "GitHub username (and/or GitHub org) that should receive access to private Release Vault repos."
+      description: "GitHub username and/or GitHub org that should receive access to private Release Vault repos."
       placeholder: "github.com/<username> or github.com/<org>"
     validations:
       required: true
+
+  - type: input
+    id: github_org
+    attributes:
+      label: GitHub org name (Organization license only, optional)
+      description: "If you want access granted to a GitHub org, put the org name here."
+      placeholder: "acme-inc"
+    validations:
+      required: false
 
   - type: dropdown
     id: platforms
