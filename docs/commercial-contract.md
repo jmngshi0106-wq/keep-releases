@@ -76,6 +76,12 @@ Covers one natural person for their own projects.
 
 If you are using Keep primarily **on behalf of an organization** (employer/client production work), that organization requires its own organization license.
 
+**Scope rule:** Individual licenses may not be used for an organization’s internal work.  
+If Keep is used primarily on behalf of an organization (employer/client), that organization must hold an Organization license.
+
+**Misuse remedy (no kill switch):** If a license is used outside its scope, the remedy is loss of **future update entitlement** (we stop granting access to new Release Vaults).  
+Your already-installed versions and already-entitled releases remain usable, and already-entitled releases remain re-downloadable.
+
 **Transfer:** one transfer is allowed if an individual later forms a company they control (no window reset).
 
 ---
