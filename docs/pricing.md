@@ -24,9 +24,14 @@ This is a **distribution boundary**, not a kill switch. Keep does not phone home
 
 ---
 
-## Pricing
+## Pricing (USD)
 
-Pricing is currently handled manually while the commercial model stabilizes.
+- **Individual License (12-month updates): $199 / year**
+- **Organization License (12-month updates): $999 / year**
+
+Notes:
+- Purchase and renewal are handled manually for now (we reply with invoice/payment instructions via the Purchase Request issue).
+- Your installed version keeps working indefinitely. Payment affects **update access**, not runtime behavior.
 
 **To purchase:** submit a Purchase Request (below). We’ll reply with payment instructions.
 
