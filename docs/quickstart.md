@@ -58,6 +58,28 @@ On success, you should see:
 
 ---
 
+## 4) See what Keep installed (Studio + Editor)
+
+If you only trust what you can see, here’s the “show me the artifact” step.
+
+### A) Supabase Studio (local)
+
+Open Studio:
+- http://127.0.0.1:54323
+
+Then:
+- Go to **Table Editor** → confirm the Keep tables exist (e.g. `organizations`, `organization_members`, `projects`).
+- Confirm **RLS is enabled** on those tables and policies exist (default-deny + explicit allow rules).
+
+### B) Your editor (Cursor / VS Code)
+
+Open the folder where you ran `keep init` and inspect what Keep scaffolded:
+- `db/migrations/` (schema + RLS + helpers)
+- `db/tests/` (pgTAP proof)
+- `db/seeds/` (deterministic seed)
+
+---
+
 ## More docs
 
 - Guarantees: `docs/guarantees.md`
