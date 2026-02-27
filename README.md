@@ -33,22 +33,22 @@ keep version
 
 ---
 
-## 2) Verify the v0.1.14 release tarball (sha256)
+## 2) Verify the v0.1.15 release tarball (sha256)
 
 ### macOS (darwin-arm64)
 
 ```bash
-curl -fsSL -LO https://github.com/jmngshi0106-wq/keep-releases/releases/download/v0.1.14/keep-0.1.14-darwin-arm64.tar.gz
-curl -fsSL -LO https://github.com/jmngshi0106-wq/keep-releases/releases/download/v0.1.14/keep-0.1.14-darwin-arm64.tar.gz.sha256
-shasum -a 256 -c keep-0.1.14-darwin-arm64.tar.gz.sha256
+curl -fsSL -LO https://github.com/jmngshi0106-wq/keep-releases/releases/download/v0.1.15/keep-0.1.15-darwin-arm64.tar.gz
+curl -fsSL -LO https://github.com/jmngshi0106-wq/keep-releases/releases/download/v0.1.15/keep-0.1.15-darwin-arm64.tar.gz.sha256
+shasum -a 256 -c keep-0.1.15-darwin-arm64.tar.gz.sha256
 ```
 
 ### Linux (x86_64)
 
 ```bash
-curl -fsSL -LO https://github.com/jmngshi0106-wq/keep-releases/releases/download/v0.1.14/keep-0.1.14-linux-x86_64.tar.gz
-curl -fsSL -LO https://github.com/jmngshi0106-wq/keep-releases/releases/download/v0.1.14/keep-0.1.14-linux-x86_64.tar.gz.sha256
-sha256sum -c keep-0.1.14-linux-x86_64.tar.gz.sha256
+curl -fsSL -LO https://github.com/jmngshi0106-wq/keep-releases/releases/download/v0.1.15/keep-0.1.15-linux-x86_64.tar.gz
+curl -fsSL -LO https://github.com/jmngshi0106-wq/keep-releases/releases/download/v0.1.15/keep-0.1.15-linux-x86_64.tar.gz.sha256
+sha256sum -c keep-0.1.15-linux-x86_64.tar.gz.sha256
 ```
 
 ---
