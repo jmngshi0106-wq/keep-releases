@@ -110,7 +110,7 @@ main() {
   need_cmd rm
 
   local platform tag version asset sha_asset base_url
-  local workdir tarball sha_file expected_sha actual_sha
+  local tarball sha_file expected_sha actual_sha
   local extract_dir keep_bin templates_dir
   local install_root bin_dir install_templates_dir installed_at_utc
 
