@@ -53,6 +53,8 @@ This creates a fresh temp workspace, starts Supabase local, and runs the proof l
 bash -lc 'set -euo pipefail; tmp="$(mktemp -d)"; cd "$tmp"; mkdir supa && cd supa; supabase init; supabase start; mkdir keep-project && cd keep-project; keep init; keep seed; keep test'
 ```
 
+**Note:** If `supabase start` says “already running” (or ports are in use), run `supabase stop --all` and re-run the demo.
+
 On success, you should see:
 `✓ Test run complete.`
 
