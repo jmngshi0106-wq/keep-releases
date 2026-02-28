@@ -58,7 +58,7 @@ sha256sum -c keep-0.1.17-linux-x86_64.tar.gz.sha256
 This creates a fresh temp workspace, starts Supabase local, and runs the proof loop.
 
 ```bash
-bash -lc 'set -euo pipefail; tmp="$(mktemp -d)"; cd "$tmp"; mkdir keep-project && cd keep-project; supabase init; supabase start; keep init; keep seed; keep test'
+bash -lc 'set -euo pipefail; tmp="$(mktemp -d)"; cd "$tmp"; mkdir supa && cd supa; supabase init; supabase start; mkdir keep-project && cd keep-project; keep init; keep seed; keep test'
 ```
 
 On success, you should see:
