@@ -11,8 +11,10 @@ jobs:
   gate:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout (tag pinned)
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.release.tag_name }}
 
       - name: Gate release (assets + canonical blocks)
         env:
